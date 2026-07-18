@@ -1,0 +1,28 @@
+export default {
+  routes: [
+    {
+      method: "GET",
+      path: "/contact-page",
+      handler: "contact-page.find",
+      config: {
+        policies: [],
+      },
+    },
+    {
+      method: "PUT",
+      path: "/contact-page",
+      handler: "contact-page.update",
+      config: {
+        policies: [],
+      },
+    },
+    {
+      method: "DELETE",
+      path: "/contact-page",
+      handler: "contact-page.delete",
+      config: {
+        policies: [],
+      },
+    },
+  ],
+};

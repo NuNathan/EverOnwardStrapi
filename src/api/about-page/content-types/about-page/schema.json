@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
+    "description": "Content for the about page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "heroHeading": {
+      "type": "text",
+      "required": true
+    },
+    "founderEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "founderHeading": {
+      "type": "text",
+      "required": true
+    },
+    "founderBody": {
+      "type": "richtext",
+      "required": true
+    },
+    "founderImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "founderCaption": {
+      "type": "string",
+      "required": false
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review"
+    },
+    "ctaBandImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "ctaCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.cta-card"
+    }
+  }
+}

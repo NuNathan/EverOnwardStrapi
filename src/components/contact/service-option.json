@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_service_options",
+  "info": {
+    "displayName": "Service Option",
+    "icon": "bulletList",
+    "description": "A service option in the contact form dropdown"
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

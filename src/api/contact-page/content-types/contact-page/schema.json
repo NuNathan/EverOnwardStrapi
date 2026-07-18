@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact Page",
+    "description": "Content for the contact page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "heroHeading": {
+      "type": "text",
+      "required": true
+    },
+    "contactImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "contactName": {
+      "type": "string",
+      "required": true
+    },
+    "contactTitle": {
+      "type": "string",
+      "required": true
+    },
+    "contactLocation": {
+      "type": "string",
+      "required": false
+    },
+    "contactInfo": {
+      "type": "string",
+      "required": false
+    },
+    "serviceOptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.service-option"
+    }
+  }
+}

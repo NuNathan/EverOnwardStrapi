@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_service_cards",
+  "info": {
+    "displayName": "Service Card",
+    "icon": "apps",
+    "description": "A service card shown on the home page"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "buttonText": {
+      "type": "string",
+      "required": true
+    },
+    "buttonLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

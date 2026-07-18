@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_virtual_training_process_steps",
+  "info": {
+    "displayName": "Process Step",
+    "icon": "apps",
+    "description": "A step in the how-it-works process"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

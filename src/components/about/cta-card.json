@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_about_cta_cards",
+  "info": {
+    "displayName": "CTA Card",
+    "icon": "link",
+    "description": "A call-to-action card on the about page"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "buttonLink": {
+      "type": "string",
+      "required": true
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,28 @@
+export default {
+  routes: [
+    {
+      method: "GET",
+      path: "/site-settings",
+      handler: "site-settings.find",
+      config: {
+        policies: [],
+      },
+    },
+    {
+      method: "PUT",
+      path: "/site-settings",
+      handler: "site-settings.update",
+      config: {
+        policies: [],
+      },
+    },
+    {
+      method: "DELETE",
+      path: "/site-settings",
+      handler: "site-settings.delete",
+      config: {
+        policies: [],
+      },
+    },
+  ],
+};

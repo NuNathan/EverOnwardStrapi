@@ -1,0 +1,78 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page",
+    "description": "Content for the home page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "heroButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "heroButtonLink": {
+      "type": "string",
+      "required": true
+    },
+    "introHeading": {
+      "type": "text",
+      "required": true
+    },
+    "introBody": {
+      "type": "text",
+      "required": true
+    },
+    "serviceCardsBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "serviceCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.service-card"
+    },
+    "contactHeading": {
+      "type": "string",
+      "required": true
+    },
+    "contactBody": {
+      "type": "text",
+      "required": true
+    },
+    "contactFaqLinkText": {
+      "type": "string"
+    },
+    "contactImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review"
+    }
+  }
+}

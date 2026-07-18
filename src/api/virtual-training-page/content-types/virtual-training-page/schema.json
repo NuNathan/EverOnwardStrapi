@@ -1,0 +1,118 @@
+{
+  "kind": "singleType",
+  "collectionName": "virtual_training_pages",
+  "info": {
+    "singularName": "virtual-training-page",
+    "pluralName": "virtual-training-pages",
+    "displayName": "Virtual Training Page",
+    "description": "Content for the virtual training page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "heroSubtitle": {
+      "type": "string",
+      "required": true
+    },
+    "heroHeading": {
+      "type": "text",
+      "required": true
+    },
+    "heroCardImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "heroCardText": {
+      "type": "string",
+      "required": false
+    },
+    "introHeading": {
+      "type": "text",
+      "required": true
+    },
+    "introBody": {
+      "type": "text",
+      "required": true
+    },
+    "detailsHeading": {
+      "type": "text",
+      "required": true
+    },
+    "detailsBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "detailsImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "detailItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "virtual-training.detail-item"
+    },
+    "testimonialsBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review"
+    },
+    "processEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "processHeading": {
+      "type": "text",
+      "required": true
+    },
+    "processBody": {
+      "type": "text",
+      "required": true
+    },
+    "processSteps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "virtual-training.process-step"
+    },
+    "ctaHeading": {
+      "type": "text",
+      "required": true
+    },
+    "ctaBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "ctaEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "ctaButtonText": {
+      "type": "string",
+      "required": false
+    },
+    "ctaButtonLink": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

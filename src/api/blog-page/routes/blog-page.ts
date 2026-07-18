@@ -1,0 +1,28 @@
+export default {
+  routes: [
+    {
+      method: "GET",
+      path: "/blog-page",
+      handler: "blog-page.find",
+      config: {
+        policies: [],
+      },
+    },
+    {
+      method: "PUT",
+      path: "/blog-page",
+      handler: "blog-page.update",
+      config: {
+        policies: [],
+      },
+    },
+    {
+      method: "DELETE",
+      path: "/blog-page",
+      handler: "blog-page.delete",
+      config: {
+        policies: [],
+      },
+    },
+  ],
+};

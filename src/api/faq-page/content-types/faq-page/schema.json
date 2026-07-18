@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "faq_pages",
+  "info": {
+    "singularName": "faq-page",
+    "pluralName": "faq-pages",
+    "displayName": "FAQ Page",
+    "description": "Content for the FAQ page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "heroEyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "heroHeading": {
+      "type": "text",
+      "required": true
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.faq-item"
+    },
+    "ctaHeading": {
+      "type": "text",
+      "required": true
+    },
+    "ctaBackgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "ctaEyebrow": {
+      "type": "string",
+      "required": false
+    },
+    "ctaButtonText": {
+      "type": "string",
+      "required": false
+    },
+    "ctaButtonLink": {
+      "type": "string",
+      "required": false
+    }
+  }
+}
