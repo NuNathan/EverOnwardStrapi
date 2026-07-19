@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import { Button } from '@strapi/design-system';
+import { Button, Flex, Typography } from '@strapi/design-system';
 import { Rocket } from '@strapi/icons';
 import { useFetchClient, useNotification } from '@strapi/admin/strapi-admin';
 
-const DeployButton = ({ slug }: { slug: string }) => {
-  if (slug !== 'api::home-page.home-page') {
-    return null;
-  }
-
+const DeployWidget = () => {
   const { post } = useFetchClient();
   const { toggleNotification } = useNotification();
   const [loading, setLoading] = useState(false);
@@ -16,7 +12,7 @@ const DeployButton = ({ slug }: { slug: string }) => {
     setLoading(true);
 
     try {
-      await post('/deploy');
+      await post('/api/deploy');
       toggleNotification({
         type: 'success',
         message: 'Site rebuild triggered successfully.',
@@ -32,16 +28,16 @@ const DeployButton = ({ slug }: { slug: string }) => {
   };
 
   return (
-    <Button
-      variant="secondary"
-      startIcon={<Rocket />}
-      onClick={handleDeploy}
-      loading={loading}
-      style={{ width: '100%' }}
-    >
-      Rebuild Website
-    </Button>
+    <Flex direction="column" alignItems="center" justifyContent="center" gap={4} height="100%">
+      <Typography variant="beta">Rebuild Website</Typography>
+      <Typography variant="omega" textColor="neutral600">
+        Trigger a full static rebuild of the live site.
+      </Typography>
+      <Button startIcon={<Rocket />} onClick={handleDeploy} loading={loading}>
+        Rebuild Now
+      </Button>
+    </Flex>
   );
 };
 
-export { DeployButton };
+export { DeployWidget };

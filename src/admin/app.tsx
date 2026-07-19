@@ -1,11 +1,17 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
-import { DeployButton } from './components/DeployButton';
+import { Rocket } from '@strapi/icons';
 
 export default {
-  bootstrap(app: StrapiApp) {
-    app.getPlugin('content-manager').injectComponent('editView', 'right-links', {
-      name: 'DeployButton',
-      Component: DeployButton,
+  register(app: StrapiApp) {
+    app.widgets.register({
+      id: 'deploy-website',
+      icon: Rocket,
+      title: {
+        id: 'deploy-widget.title',
+        defaultMessage: 'Deploy',
+      },
+      component: () =>
+        import('./components/DeployWidget').then((m) => m.DeployWidget),
     });
   },
 };

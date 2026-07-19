@@ -599,6 +599,44 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactSubmissionContactSubmission
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_submissions';
+  info: {
+    description: 'Form submissions from the contact page';
+    displayName: 'Contact Submission';
+    pluralName: 'contact-submissions';
+    singularName: 'contact-submission';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dogDetails: Schema.Attribute.Text;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    goals: Schema.Attribute.Text;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-submission.contact-submission'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    referralSource: Schema.Attribute.String;
+    serviceInterest: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
   collectionName: 'faq_pages';
   info: {
@@ -1359,6 +1397,7 @@ declare module '@strapi/strapi' {
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::contact-submission.contact-submission': ApiContactSubmissionContactSubmission;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::review.review': ApiReviewReview;
